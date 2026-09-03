@@ -1,0 +1,1880 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  color: #172033;
+
+  background: #07111f;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   APPLICATION SHELL
+===================================================== */
+
+.application-shell {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 10% 5%,
+      rgba(37, 99, 235, 0.18),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(79, 70, 229, 0.15),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #07111f,
+      #0b1930 45%,
+      #101c36
+    );
+}
+
+
+/* =====================================================
+   APPLICATION HEADER
+===================================================== */
+
+.application-header {
+  width: 100%;
+
+  padding: 18px 5%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background:
+    rgba(7, 17, 31, 0.92);
+
+  border-bottom:
+    1px solid rgba(148, 163, 184, 0.15);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+.application-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.application-logo {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  color: white;
+
+  font-size: 23px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  box-shadow:
+    0 8px 25px rgba(37, 99, 235, 0.35);
+}
+
+.application-brand h1 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 19px;
+
+  font-weight: 750;
+}
+
+.application-brand p {
+  margin: 4px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+.header-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.admin-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #cbd5e1;
+
+  font-size: 13px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 10px rgba(34, 197, 94, 0.8);
+}
+
+.logout-button {
+  border: 1px solid
+    rgba(148, 163, 184, 0.25);
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color: #e2e8f0;
+
+  padding: 9px 16px;
+
+  border-radius: 8px;
+
+  font-weight: 650;
+
+  transition: 0.2s;
+}
+
+.logout-button:hover {
+  background: rgba(239, 68, 68, 0.15);
+
+  border-color: rgba(239, 68, 68, 0.35);
+
+  color: #fecaca;
+}
+
+
+/* =====================================================
+   DASHBOARD NAVIGATION
+===================================================== */
+
+.dashboard-navigation {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 25px 20px 22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #07111f,
+      #0b1930
+    );
+}
+
+.dashboard-nav-button {
+  min-width: 210px;
+
+  padding: 13px 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  border: 1px solid
+    rgba(148, 163, 184, 0.25);
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition: all 0.2s ease;
+}
+
+.dashboard-nav-button:hover {
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  color: white;
+
+  transform: translateY(-1px);
+}
+
+.dashboard-nav-button.active {
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: white;
+
+  border-color: transparent;
+
+  box-shadow:
+    0 8px 22px
+    rgba(37, 99, 235, 0.30);
+}
+
+.nav-icon {
+  font-size: 16px;
+}
+
+
+/* =====================================================
+   CONTENT AREA
+===================================================== */
+
+.application-content {
+  min-height: calc(100vh - 160px);
+
+  padding: 34px 5% 50px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #edf3fb 0%,
+      #f4f7fb 50%,
+      #eaf0f8 100%
+    );
+}
+
+
+/* =====================================================
+   CRIME MANAGEMENT PAGE
+===================================================== */
+
+.crime-management-page {
+  max-width: 1450px;
+
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   PAGE HEADING
+===================================================== */
+
+.page-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 25px;
+}
+
+.section-label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
+.page-heading h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 32px;
+
+  font-weight: 800;
+}
+
+.page-heading p {
+  margin: 7px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.add-crime-button {
+  border: none;
+
+  padding: 12px 20px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: white;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 7px 18px
+    rgba(37, 99, 235, 0.25);
+
+  transition: 0.2s;
+}
+
+.add-crime-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px
+    rgba(37, 99, 235, 0.32);
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.crime-statistics {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+}
+
+.crime-stat-card {
+  padding: 19px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  border:
+    1px solid #dbe3ed;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 7px 22px
+    rgba(15, 23, 42, 0.06);
+}
+
+.stat-card-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  font-size: 19px;
+}
+
+.stat-card-icon.blue {
+  background: #eaf2ff;
+}
+
+.stat-card-icon.purple {
+  background: #f0ecff;
+}
+
+.stat-card-icon.green {
+  background: #eafaf2;
+}
+
+.crime-stat-card span {
+  display: block;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.crime-stat-card strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #172033;
+
+  font-size: 20px;
+}
+
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+.system-message {
+  padding: 13px 16px;
+
+  margin-bottom: 20px;
+
+  border-radius: 9px;
+
+  font-size: 13px;
+
+  font-weight: 650;
+}
+
+.system-message.success {
+  color: #047857;
+
+  background: #ecfdf5;
+
+  border: 1px solid #a7f3d0;
+}
+
+.system-message.error {
+  color: #b91c1c;
+
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.crime-form {
+  margin-bottom: 25px;
+
+  padding: 25px;
+
+  background: white;
+
+  border: 1px solid #dbe3ed;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(15, 23, 42, 0.07);
+}
+
+.crime-form-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+.crime-form-header h3 {
+  margin: 0;
+
+  font-size: 21px;
+}
+
+.close-form-button {
+  width: 35px;
+  height: 35px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+  font-size: 16px;
+}
+
+.crime-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 17px;
+}
+
+.form-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  color: #334155;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  border:
+    1px solid #cbd5e1;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: white;
+
+  color: #172033;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.10);
+}
+
+.form-buttons {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.save-record-button {
+  border: none;
+
+  padding: 11px 18px;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-weight: 700;
+}
+
+.cancel-button {
+  padding: 11px 18px;
+
+  border:
+    1px solid #cbd5e1;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #475569;
+
+  font-weight: 650;
+}
+
+
+/* =====================================================
+   RECORD SECTION
+===================================================== */
+
+.crime-records-section {
+  padding: 25px;
+
+  background: white;
+
+  border:
+    1px solid #dbe3ed;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(15, 23, 42, 0.07);
+}
+
+.records-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.records-heading h3 {
+  margin: 0;
+
+  font-size: 22px;
+
+  color: #172033;
+}
+
+.records-heading p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.refresh-button {
+  padding: 9px 15px;
+
+  border:
+    1px solid #cbd5e1;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #334155;
+
+  font-weight: 650;
+}
+
+.refresh-button:hover {
+  background: #f8fafc;
+}
+
+
+/* =====================================================
+   PROFESSIONAL TABLE
+===================================================== */
+
+.crime-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border:
+    1px solid #b8c4d3;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 3px 10px
+    rgba(15, 23, 42, 0.04);
+}
+
+.professional-crime-table {
+  width: 100%;
+
+  min-width: 1200px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+/* HEADER */
+
+.professional-crime-table thead {
+  background:
+    linear-gradient(
+      135deg,
+      #16243a,
+      #213452
+    );
+}
+
+.professional-crime-table th {
+  padding: 14px 12px;
+
+  color: white;
+
+  text-align: left;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+
+  border-right:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-bottom:
+    2px solid #0f1b2e;
+
+  white-space: nowrap;
+}
+
+
+/* BODY */
+
+.professional-crime-table td {
+  padding: 14px 12px;
+
+  color: #334155;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+
+  vertical-align: middle;
+
+  border-right:
+    1px solid #d8e0e9;
+
+  border-bottom:
+    1px solid #d8e0e9;
+
+  word-wrap: break-word;
+}
+
+
+/* REMOVE LAST VERTICAL BORDER */
+
+.professional-crime-table th:last-child,
+.professional-crime-table td:last-child {
+  border-right: none;
+}
+
+
+/* ZEBRA ROWS */
+
+.professional-crime-table tbody tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+.professional-crime-table tbody tr:nth-child(even) {
+  background: #f7faff;
+}
+
+
+/* HOVER */
+
+.professional-crime-table tbody tr:hover {
+  background: #eaf2ff;
+}
+
+
+/* COLUMN WIDTHS */
+
+.professional-crime-table th:nth-child(1),
+.professional-crime-table td:nth-child(1) {
+  width: 45px;
+}
+
+.professional-crime-table th:nth-child(2),
+.professional-crime-table td:nth-child(2) {
+  width: 135px;
+}
+
+.professional-crime-table th:nth-child(3),
+.professional-crime-table td:nth-child(3) {
+  width: 130px;
+}
+
+.professional-crime-table th:nth-child(4),
+.professional-crime-table td:nth-child(4) {
+  width: 105px;
+}
+
+.professional-crime-table th:nth-child(5),
+.professional-crime-table td:nth-child(5) {
+  width: 90px;
+}
+
+.professional-crime-table th:nth-child(6),
+.professional-crime-table td:nth-child(6) {
+  width: 165px;
+}
+
+.professional-crime-table th:nth-child(7),
+.professional-crime-table td:nth-child(7) {
+  width: 270px;
+}
+
+.professional-crime-table th:nth-child(8),
+.professional-crime-table td:nth-child(8) {
+  width: 170px;
+}
+
+
+/* NUMBER */
+
+.column-number {
+  text-align: center !important;
+
+  color: #64748b !important;
+
+  font-weight: 750;
+}
+
+
+/* CRIME TYPE */
+
+.crime-type {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  background: #eaf2ff;
+
+  color: #1d4ed8;
+
+  font-weight: 750;
+}
+
+
+/* LOCATION */
+
+.location-text {
+  color: #334155;
+
+  font-weight: 600;
+}
+
+
+/* TIME */
+
+.time-text {
+  display: inline-block;
+
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  background: #f1f5f9;
+
+  color: #334155;
+
+  font-weight: 650;
+}
+
+
+/* DESCRIPTION */
+
+.description-text {
+  color: #475569;
+}
+
+
+/* ACTIONS */
+
+.actions-column {
+  text-align: center !important;
+}
+
+.table-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+}
+
+.table-edit-button,
+.table-delete-button {
+  min-width: 70px;
+
+  padding: 7px 9px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  transition: 0.15s;
+}
+
+.table-edit-button {
+  background: #2563eb;
+}
+
+.table-edit-button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+.table-delete-button {
+  background: #dc2626;
+}
+
+.table-delete-button:hover {
+  background: #b91c1c;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   EMPTY / LOADING
+===================================================== */
+
+.records-loading {
+  padding: 60px;
+
+  text-align: center;
+
+  color: #64748b;
+}
+
+.loading-spinner {
+  width: 34px;
+  height: 34px;
+
+  margin: 0 auto 12px;
+
+  border:
+    4px solid #dbeafe;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation:
+    loading-spin 0.8s linear infinite;
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.records-empty {
+  padding: 60px 20px;
+
+  text-align: center;
+
+  background: #f8fafc;
+
+  border:
+    1px dashed #cbd5e1;
+
+  border-radius: 10px;
+}
+
+.records-empty > div {
+  font-size: 42px;
+
+  margin-bottom: 10px;
+}
+
+.records-empty h4 {
+  margin: 0 0 7px;
+
+  font-size: 18px;
+}
+
+.records-empty p {
+  margin-bottom: 20px;
+
+  color: #64748b;
+}
+
+
+/* =====================================================
+   LOGIN PAGE
+===================================================== */
+
+.login-page {
+  min-height: 100vh;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(37, 99, 235, 0.30),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(79, 70, 229, 0.28),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #030b16,
+      #081a33 50%,
+      #101d3a
+    );
+}
+
+
+/* BACKGROUND PATTERN */
+
+.login-background-pattern {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.12;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+
+  pointer-events: none;
+}
+
+
+/* LOGIN CARD */
+
+.login-card {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(440px, 100%);
+
+  padding: 38px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  border-radius: 20px;
+
+  background:
+    rgba(12, 27, 49, 0.88);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.45);
+}
+
+.login-logo {
+  width: 64px;
+  height: 64px;
+
+  margin: 0 auto 17px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: white;
+
+  font-size: 30px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(37, 99, 235, 0.35);
+}
+
+.login-heading {
+  text-align: center;
+}
+
+.login-heading h1 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 23px;
+
+  line-height: 1.3;
+}
+
+.login-heading p {
+  margin: 7px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+.login-divider {
+  height: 1px;
+
+  margin: 25px 0;
+
+  background:
+    rgba(255, 255, 255, 0.10);
+}
+
+.login-card h2 {
+  margin: 0;
+
+  color: white;
+
+  text-align: center;
+
+  font-size: 20px;
+}
+
+.login-description {
+  margin: 7px 0 23px;
+
+  color: #94a3b8;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* LOGIN FORM */
+
+.login-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 17px;
+}
+
+.login-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.login-field label {
+  color: #cbd5e1;
+
+  font-size: 13px;
+
+  font-weight: 650;
+}
+
+.input-with-icon {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 13px;
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.25);
+
+  border-radius: 9px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  transition: 0.2s;
+}
+
+.input-with-icon:focus-within {
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(59, 130, 246, 0.12);
+}
+
+.input-with-icon span {
+  font-size: 15px;
+}
+
+.input-with-icon input {
+  width: 100%;
+
+  padding: 13px 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 14px;
+}
+
+.input-with-icon input::placeholder {
+  color: #64748b;
+}
+
+.login-error {
+  padding: 11px;
+
+  border-radius: 8px;
+
+  background:
+    rgba(239, 68, 68, 0.12);
+
+  border:
+    1px solid
+    rgba(239, 68, 68, 0.25);
+
+  color: #fca5a5;
+
+  font-size: 13px;
+}
+
+.login-btn {
+  margin-top: 4px;
+
+  padding: 13px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  box-shadow:
+    0 8px 20px
+    rgba(37, 99, 235, 0.25);
+
+  transition: 0.2s;
+}
+
+.login-btn:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 11px 25px
+    rgba(37, 99, 235, 0.35);
+}
+
+.login-btn:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+.login-security {
+  margin-top: 22px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.application-footer {
+  padding: 15px 5%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #94a3b8;
+
+  background: #07111f;
+
+  border-top:
+    1px solid
+    rgba(148, 163, 184, 0.12);
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .crime-statistics {
+    grid-template-columns: 1fr;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .crime-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field.full-width {
+    grid-column: auto;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .application-header {
+    align-items: flex-start;
+
+    gap: 15px;
+
+    flex-direction: column;
+  }
+
+  .header-right {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .dashboard-navigation {
+    flex-direction: column;
+
+    padding: 18px;
+  }
+
+  .dashboard-nav-button {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .application-content {
+    padding: 22px 14px 35px;
+  }
+
+  .page-heading h2 {
+    font-size: 26px;
+  }
+
+  .crime-records-section {
+    padding: 16px;
+  }
+
+  .records-heading {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .login-card {
+    padding: 28px 22px;
+  }
+
+  .application-footer {
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+}
+/* ============================================================
+   CRIME + WEAPON RELATIONSHIP
+   ============================================================ */
+
+.relationship-card {
+  width: 100%;
+  margin-top: 30px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #d9e1ea;
+  border-radius: 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.relationship-card h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #102a43;
+}
+
+.relationship-subtitle {
+  margin: 8px 0 24px;
+  text-align: center;
+  font-size: 15px;
+  color: #627d98;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.relationship-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: #ffffff;
+}
+
+.relationship-table th,
+.relationship-table td {
+  border: 1px solid #d9e1ea;
+  padding: 13px 16px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.relationship-table th {
+  background: #eaf0f6;
+  color: #102a43;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.relationship-table td {
+  color: #243b53;
+  font-size: 14px;
+}
+
+.relationship-table th:nth-child(1),
+.relationship-table td:nth-child(1) {
+  width: 50%;
+}
+
+.relationship-table th:nth-child(2),
+.relationship-table td:nth-child(2) {
+  width: 30%;
+}
+
+.relationship-table th:nth-child(3),
+.relationship-table td:nth-child(3) {
+  width: 20%;
+  text-align: center;
+}
+
+.relationship-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.relationship-table tbody tr:hover {
+  background: #eef4f8;
+}
+/* ============================================================
+   RELATED HISTORICAL CASES
+   ============================================================ */
+
+.related-cases-section {
+  margin: 40px 0;
+  padding: 28px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.related-cases-section h2 {
+  margin: 0 0 8px;
+  text-align: center;
+  font-size: 26px;
+  color: #14213d;
+}
+
+.related-cases-section > p {
+  margin: 0 0 24px;
+  text-align: center;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.related-cases-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.related-cases-table table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.related-cases-table th {
+  padding: 14px 16px;
+  text-align: left;
+  background: #eef3f9;
+  color: #14213d;
+  font-weight: 700;
+  border-bottom: 2px solid #d8e0ea;
+}
+
+.related-cases-table td {
+  padding: 14px 16px;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.related-cases-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.related-cases-table tbody tr:hover {
+  background: #eef5ff;
+}
+
+.related-cases-table td:nth-child(4) {
+  font-weight: 700;
+}
+
+/* Similarity score */
+
+.related-cases-table td:nth-child(4) strong {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .related-cases-section {
+    padding: 18px;
+  }
+
+  .related-cases-section h2 {
+    font-size: 22px;
+  }
+
+}
+/* ============================================================
+   CASE DETAILS MODAL
+   ============================================================ */
+
+.view-case-btn {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.view-case-btn:hover {
+  background: #1d4ed8;
+}
+
+.case-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.case-modal {
+  width: min(700px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.case-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.case-modal-header h2 {
+  margin: 0;
+  color: #14213d;
+}
+
+.close-modal-btn {
+  border: none;
+  background: #f1f5f9;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close-modal-btn:hover {
+  background: #e2e8f0;
+}
+
+.case-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.case-details-grid > div {
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.case-details-grid span {
+  display: block;
+  margin-bottom: 6px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.case-details-grid strong {
+  display: block;
+  color: #14213d;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .case-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-modal {
+    padding: 20px;
+  }
+}
+/* RELATED CASES SEARCH PANEL */
+
+.related-search-panel {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+}
+.related-search-panel h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1f2d3d;
+}
+.search-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    align-items: end;
+}
+.search-grid div {
+    display: flex;
+    flex-direction: column;
+}
+.search-grid label {
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #34495e;
+}
+.search-grid input {
+    padding: 11px 12px;
+    border: 1px solid #d5dce5;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+.search-grid input:focus {
+    border-color: #3366cc;
+    box-shadow: 0 0 0 3px rgba(51, 102, 204, 0.12);
+}
+.related-search-panel button {
+    display: block;
+    margin: 22px auto 0;
+    padding: 12px 28px;
+    background: #3366cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.related-search-panel button:hover {
+    background: #254fa3;
+}
+.view-details-btn {
+  background: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+.view-details-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  border-radius: 10px;
+  padding: 10px 20px;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
